@@ -1,12 +1,23 @@
 {
-  "name": "sean-add",
+  "name": "@xiaobo2020/sean-add",
   "version": "1.0.0",
-  "description": "",
+  "description": "An add function to test scope",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Xiaobo2020",
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xiaobo2020/sean-add.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Xiaobo2020/sean-add/issues"
+  },
+  "homepage": "https://github.com/Xiaobo2020/sean-add#readme"
 }
