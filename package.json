@@ -2,8 +2,9 @@
   "name": "@xiaobo2020/add",
   "version": "1.0.0",
   "description": "An add function to test scope",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
+    "build": "babel src -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -19,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/Xiaobo2020/sean-add/issues"
   },
-  "homepage": "https://github.com/Xiaobo2020/sean-add#readme"
+  "homepage": "https://github.com/Xiaobo2020/sean-add#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.18.6",
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6"
+  }
 }
