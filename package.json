@@ -7,7 +7,7 @@
     "build": "babel src -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["@xiaobo2020", "lib", "add"],
   "author": "Xiaobo2020",
   "license": "ISC",
   "directories": {
