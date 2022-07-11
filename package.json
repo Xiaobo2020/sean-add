@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Xiaobo2020/sean-add/issues"
   },
-  "homepage": "https://github.com/Xiaobo2020/sean-add#readme"
+  "homepage": "https://github.com/Xiaobo2020/sean-add#readme",
+  "devDependencies": {
+    "danger": "^11.1.1"
+  }
 }
