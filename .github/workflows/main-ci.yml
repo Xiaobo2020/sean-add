@@ -13,12 +13,13 @@ on:
 
 env:
   NODE_VERSION: 16.15.0
+  NODE_REGISTRY_URL: https://registry.npmjs.org/
   DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  install:
+  check-danger:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -29,12 +30,13 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Use Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
+          always-auth: true
           node-version: ${{ env.NODE_VERSION }}
-      
-      - name: Install npm dependencies
-        run: npm ci
+          registry-url: ${{ env.NODE_REGISTRY_URL }}
 
-      - name: DangerJS
-        run: npx danger ci
+      - name: Install dependencies and check danger
+        run: |
+          npm run setup
+          npx danger ci
