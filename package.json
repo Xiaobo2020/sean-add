@@ -4,6 +4,7 @@
   "description": "An add function to test scope",
   "main": "index.js",
   "scripts": {
+    "setup": "npm ci --registry=\"https://registry.npmjs.org/\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
