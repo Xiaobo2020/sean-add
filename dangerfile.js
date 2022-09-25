@@ -44,18 +44,21 @@ commonPrDescription({
  * @reviewedByAuthor
  * hard fail if PR author has not reviewed their code
  */
-const PR_SELF_REVIEW_CHECK = 'Code has been reviewed by the author';
-const hasPrAuthorSelfReviewed = prDescription.includes(`[x] ${PR_SELF_REVIEW_CHECK}`);
-if (!hasPrAuthorSelfReviewed && !prAuthorIsBot) {
-  fail(
-    `\`${PR_SELF_REVIEW_CHECK}\` is unchecked in the PR description.\n\n` +
-    "* Please ensure you have read through your code changes in 'Files changed' _before_ asking others to review your PR. " +
-    "This helps catch obvious errors and typos, which avoids wasting your time and the reviewer's time, and ultimately allows us to " +
-    'ship product changes more quickly.\n\n* Please also take this opportunity to annotate your PR with GitHub comments to explain ' +
-    'any complex logic or decisions that you have made. This helps the reviewer understand your PR and speed up the review process.\n\n' +
-    `Once you've done this, check \`${PR_SELF_REVIEW_CHECK}\` in the PR description to make this Danger step pass.`,
-  );
-}
+const prAuthorSelfReviewed = () => {
+  const PR_SELF_REVIEW_CHECK = 'Code has been reviewed by the author';
+  const hasPrAuthorSelfReviewed = prDescription.includes(`[x] ${PR_SELF_REVIEW_CHECK}`);
+  if (!hasPrAuthorSelfReviewed && !prAuthorIsBot) {
+    fail(
+      `\`${PR_SELF_REVIEW_CHECK}\` is unchecked in the PR description.\n\n` +
+      "* Please ensure you have read through your code changes in 'Files changed' _before_ asking others to review your PR. " +
+      "This helps catch obvious errors and typos, which avoids wasting your time and the reviewer's time, and ultimately allows us to " +
+      'ship product changes more quickly.\n\n* Please also take this opportunity to annotate your PR with GitHub comments to explain ' +
+      'any complex logic or decisions that you have made. This helps the reviewer understand your PR and speed up the review process.\n\n' +
+      `Once you've done this, check \`${PR_SELF_REVIEW_CHECK}\` in the PR description to make this Danger step pass.`,
+    );
+  }
+};
+prAuthorSelfReviewed();
 
 /**
  * @testedInBrowser
