@@ -6,9 +6,15 @@
   "scripts": {
     "setup": "npm ci --registry=\"https://registry.npmjs.org/\"",
     "build": "babel src -d dist",
+    "danger:local": "npx danger pr https://github.com/Xiaobo2020/sean-add/pull/7",
+    "danger": "npx danger ci --failOnErrors -v",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["@xiaobo2020", "lib", "add"],
+  "keywords": [
+    "@xiaobo2020",
+    "lib",
+    "add"
+  ],
   "author": "Xiaobo2020",
   "license": "ISC",
   "directories": {
